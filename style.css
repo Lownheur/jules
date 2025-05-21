@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    height: 60px; /* Fixed header height */
+    box-sizing: border-box;
+    text-align: center;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+header h1 {
+    margin: 0;
+    line-height: 40px; /* Adjust based on padding */
+}
+
+main {
+    flex-grow: 1; /* Allow main to take available space */
+    display: flex;
+    height: calc(100vh - 60px); /* Full viewport height minus header */
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px; /* Space between controls and PDF area */
+}
+
+.controls {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.controls label {
+    font-weight: bold;
+}
+
+.controls textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Allow vertical resize, but not horizontal */
+}
+
+.controls button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+.controls button#download-pdf {
+    background-color: #28a745; /* Green for download */
+}
+
+.controls button#download-pdf:hover {
+    background-color: #1e7e34;
+}
+
+.pdf-display-area {
+    flex-grow: 1; /* Takes remaining width */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden; /* Ensures iframe fits well */
+}
+
+#pdf-viewer {
+    border: none; /* Remove default iframe border */
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        height: auto; /* Adjust height for stacked layout */
+    }
+
+    .controls {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .pdf-display-area {
+        width: 100%;
+        height: 500px; /* Fixed height for PDF area on small screens */
+    }
+}
