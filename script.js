@@ -7,7 +7,7 @@ const errorMessageDiv = document.getElementById('error-message');
 const loadingMessageDiv = document.getElementById('loading-message');
 
 // API Configuration
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = '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';
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 const MODEL_NAME = 'meta-llama/llama-4-scout:free';
 
